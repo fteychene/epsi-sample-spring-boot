@@ -86,9 +86,9 @@ public class UserController {
         return userRepositoy.save(databaseUser);
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathParam("id") Long id) {
+    public void delete(@PathVariable("id") Long id) {
         userRepositoy.delete(id);
     }
 
